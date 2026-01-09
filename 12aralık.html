@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>List-Style Çalışma Sayfası</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .target {
+      background: #e0f0ff;
+      padding: 20px;
+      margin-top: 10px;
+    }
+    /* 1. Temel Madde İşareti Değişimi */
+  .liste1-1 { 
+    list-style-type: square;
+
+  }
+
+  .liste1-2 {
+    list-style-type: upper-roman;
+    list-style-position: inside;
+
+  }
+
+  /* 2. Emoji ile Özel Madde İşareti */
+  .liste2 {
+    list-style-type: none;
+  }
+  .liste2 li::marker {
+    content:"*";
+  }
+
+
+  /* 3. Maddeler Yan Yana Gözüksün */
+  .liste3 li{ 
+      display: inline-block;
+      margin-right: 15px;
+  }
+
+  /* =========================================
+   TABLO STİLLERİ
+  ========================================= */
+
+  .ogrenci-tablosu {
+      margin: 0 auto ;
+      border: 2px solid #276;
+      width: 500px;
+      height: auto ;
+      border-collapse: collapse;
+      text-align: center;
+  }
+  .ogrenci-tablosu th,
+  .ogrenci-tablosu td {
+      border: 1px solid #333;
+      padding: 10px;
+      vertical-align: middle;
+  }
+
+  /* Başlık satırının arka planı açık mavi */
+  .ogrenci-tablosu th {
+      background-color: #333;
+  }
+  
+
+  /* Zebra deseni */
+  /* Tek satırlar: beyaz */
+  .ogrenci-tablosu tbody tr:nth-child(odd) {
+      background-color: grey;
+  }
+
+  /* Çift satırlar: açık gri */
+  .ogrenci-tablosu tbody tr:nth-child(odd) {
+      background-color: #d9e3f7;
+  }
+
+/* =========================================
+   FORM STİLLERİ
+========================================= */
+
+/* Form alanı kutusu */
+.iletisim-formu {
+  max-width: 450px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f7f7f7;
+}
+
+/* Label düzeni */
+.iletisim-formu label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+
+}
+
+/* Ortak stiller (input, textarea, select) */
+.iletisim-formu input,
+.iletisim-formu textarea,
+.iletisim-formu select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+
+}
+
+/* Placeholder renkleri */
+.iletisim-formu input::placeholder,
+.iletisim-formu textarea::placeholder {
+    color: #999;
+}
+
+/* Input, textarea ve select için focus efekti */
+.iletisim-formu input::focus,
+.iletisim-formu textarea::focus,
+.iletisim-formu select::focus {
+    border-color: blue;
+    box-shadow: 0 0 4px ;
+    
+}
+
+/* Gönder butonu */
+
+/* Gönder butonu :hover kullanımı */
+    
+  </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Liste Stil Uygulama Çalışması</h1>
+
+      <section class="box">
+        <h2>1. Temel Madde İşareti Değişimi</h2>
+        <!-- Görev: list-style-type değerini (circle, square, decimal vb.) değiştirin -->
+        <ul class="liste1-1">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+        <!-- Görev: list-style-type değerini (upper-roman, upper-alpha vb.) değiştirin, list-style-position (inside) yapın -->
+        <ol class="liste1-2">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ol>
+      </section>
+
+      <section class="box">
+        <h2>2. list-style-type: none; yapın ve kendi seçtiğiniz bir emoji ile ::marker kullanarak madde işareti yapı</h2>
+        <ul class="liste2">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </section>
+
+      <section class="box">
+        <h2>3. Aşağıdaki listenin yan yana gözükmesini sağlayınız.</h2>
+        <ul class="liste3">
+          <li>Ana Sayfa</li>
+          <li>Hakkında</li>
+          <li>İletişim</li>
+          <li>Blog</li>
+        </ul>
+      </section>
+     
+      <h1>Tablo Stil Uygulama Çalışması</h1>
+      <section class="box">
+        <!-- Görevler:
+        1) Tabloya width ve height değeri verin.
+        2) Tabloya ve hücrelere border ekleyin.
+        3) Hücrelere padding ekleyin.
+        4) empty-cells özelliğini kullanın (show veya hide).
+        5) border-collapse özelliğini deneyin (collapse veya separate).
+        6) border-spacing ayarlayın (border-collapse: separate ise çalışır).
+        7) text-align ile yatay hizalama yapın.
+        8) vertical-align ile dikey hizalama yapın.
+        9) Başlık hücrelerinin (<th>) arka plan rengini açık gri yapın.
+        10) Tabloyu ortalayın.
+        11) Satırlara zebra deseni uygulayın:
+            - Tek satırlar: beyaz
+            - Çift satırlar: açık gri -->
+        <table class="ogrenci-tablosu">
+          <thead>
+            <tr>
+              <th>Ad</th>
+              <th>Soyad</th>
+              <th>Sınıf</th>
+              <th>Not</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Ayşe</td>
+              <td>Yılmaz</td>
+              <td>10-A</td>
+              <td>95</td>
+            </tr>
+            <tr>
+              <td>Mehmet</td>
+              <td>Kaya</td>
+              <td>10-B</td>
+              <td>88</td>
+            </tr>
+            <tr>
+              <td>Zeynep</td>
+              <td>Demir</td>
+              <td>10-C</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <h1>Form Stil Uygulama Çalışması</h1>
+      <section class="box">
+        <form class="iletisim-formu">
+
+          <!-- Ortak görev (tüm form elemanları için):
+              Aşağıdaki etiketlere ortak stiller uygulayın:
+              input, textarea, select
+              - width: 100%
+              - padding verin
+              - border belirleyin
+              - margin-bottom ekleyin
+              - box-sizing: border-box kullanın
+          -->
+
+          <!-- Ek görev (tüm form elemanlarında kullanılacak pseudo-class’lar):
+              - :focus durumunda kenarlığı veya gölgeyi değiştirin
+          -->
+
+          <!-- Ek görev (sadece input & textarea için):
+              - ::placeholder rengini değiştirin
+          -->
+          <label for="adsoyad">Ad - Soyad:</label>
+          <input type="text" id="adsoyad" name="adsoyad" placeholder="Adınızı girin">
+
+          <label for="email">E-posta:</label>
+          <input type="email" id="email" name="email" placeholder="ornek@mail.com">
+
+          <label for="mesaj">Mesajınız:</label>
+          <!-- textarea ortak stillerden yararlanacak -->
+          <textarea id="mesaj" name="mesaj" rows="5" placeholder="Mesaj yazın"></textarea>
+
+          <label for="sehir">Şehir:</label>
+          <select id="sehir" name="sehir">
+            <option value="">Şehir seçin</option>
+            <option value="istanbul">İstanbul</option>
+            <option value="ankara">Ankara</option>
+            <option value="izmir">İzmir</option>
+          </select>
+
+          <!-- Buton için görev:
+              - Arka plan rengini belirleyin
+              - Kenarlığı kaldırın
+              - Padding verin
+              - İmleci pointer yapın
+              - :hover durumunda farklı bir renk kullanın
+          -->
+          <button type="submit">Gönder</button>
+        </form>
+      </section>
+    </main> 
+  </body>
+ </html>
