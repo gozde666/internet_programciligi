@@ -1,1 +1,1 @@
-#İnternet programcılığı 1 dersi ödev deposudur.
+# İnternet programcılığı 1 dersi ödev deposudur.
