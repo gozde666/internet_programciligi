@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <form action="login.php" method="post">
+        <p>Ad:<input type="text" name="ad" placeholder="Adınızı girin" required></p>
+        <p>
+            Parola:<input type="password" name="password" size="15"
+                          maxlength="30">
+        </p>
+        <p>Sınav hakkındaki düşünceleriniz nelerdir?</p>
+        <textarea name="comments" cols="20" rows="4">Düşüncelerinizi yazın...</textarea>
+
+        <form action="http://www.example.com/profile.php">
+            <p>
+                Diploma belgenizi yükleyiniz.<br />
+                <input type="file" name="diploma">
+            </p>
+            <p>
+                <fieldset>
+                    <legend>Kişisel Bilgiler</legend>
+
+                    <label for="ad">Ad:</label>
+                    <input type="text" id="ad" name="ad"><br>
+            </p>
+            <p>
+                <label for="soyad">Soyad:</label>
+                <input type="text" id="soyad" name="soyad"><br>
+                </fieldset>
+
+            </p>
+            <p>Gün <input type="date" name="date" id="date"></p>
+            <p>Time: <input type="time" id="time" name="time" /></p>
+
+            <p><input type="month" min="2024-01" max="2025-12"></p>
+            <p><input type="week" min="2024-W01" max="2025-W52"></p>
+
+            <input type="number" min="0" max="100" step="5"><br>
+            <input type="tel" placeholder="05xx xxx xx xx">
+
+            <p><input type="color" value="#ff0000"></p>
+            <p><input type="search" placeholder="Arama yap..."></p>
+
+            <form action="http://www.example.com/profile.php" method="post">
+                <p>Sevdiğiniz müzik türünü seçiniz:<br />
+                <input type="radio" name="genre" value="rock" checked="checked"/>Rock
+                <input type="radio" name="genre" value="pop" />Pop
+                <input type="radio" name="genre" value="jazz" />Jazz
+
+          
+
+                <form action="http://www.example.com/profile.php" method="post">
+                    <p>Sevdiğiniz müzik türünü seçiniz:<br />
+                    <select name="genre">
+                        <option value="rock">Rock</option>
+                        <option value="pop">Pop</option>
+                        <option value="jazz">Jazz</option>
+                    </select>
+                        
+
+
+
+
+                    </p>
+                </form>
+            </body>
+</html>

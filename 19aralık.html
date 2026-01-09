@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Özellikleri</title>
+  <style>
+    /* ===============================
+       ORTAK KUTU STİLLERİ
+    =============================== */
+    .container {
+      border: 2px solid darkblue;
+      padding: 20px;
+      margin-bottom: 30px;
+      height: 150px;
+    }
+
+    .item {
+      background: darkred;
+      color: white;
+      padding: 10px;
+      margin: 5px;
+      width: 80px;
+      text-align: center;
+    }
+
+    /* ===============================
+    1) FLEX-DIRECTION
+    =============================== */
+    .direction {
+      display: flex;
+      flex-direction: row-reverse;
+      border: 1px dashed black;
+
+    }
+
+    /* ===============================
+    2) FLEX-WRAP
+    =============================== */
+    .wrap {
+      display: flex;
+      flex-wrap:wrap-reverse;
+    }
+
+    .wrap .item {
+        display: flex;
+
+    }
+
+    /* ===============================
+    3) JUSTIFY-CONTENT
+    =============================== */
+    .justify-content {
+      display: flex;
+      justify-content: space-evenly;
+      border: 8px dashed black;
+    }
+
+    /* ===============================
+    4) ALIGN-ITEMS
+    =============================== */
+    .align-items {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    /* ===============================
+    5) ALIGN-CONTENT
+    =============================== */
+    .align-content {
+      display: flex;
+      align-content: space-between;
+      border: 5px dashed black;
+    }
+
+    /* ===============================
+    6) ALIGN-SELF
+    =============================== */
+    .align-self {
+      display: flex;
+      align-items: baseline;
+      align-self: baseline;
+    }
+    .ozel {
+      display: flex;
+      align-self: flex-start;
+    }
+
+    /* ===============================
+    7) ORDER
+    =============================== */
+    .order {
+      display: flex;
+
+
+    }
+
+    .order .item1 {  
+      order: 2;
+
+    }
+    .order .item2 { 
+      order: 1;
+
+     }
+    .order .item3 { 
+      order: 3;
+
+     }
+
+    /* ===============================
+    8-9) FLEX-GROW / FLEX-SHRINK / FLEX-BASIS
+    =============================== */
+    
+    .flex-values {
+      display: flex;
+      
+    }
+
+    .flex-values .item1, .flex-values .item3 {
+        flex-grow: 3;
+        
+    }
+
+    .flex-values .item2 {
+        flex-grow: 1;
+    }
+
+    .flex-values .item4, .flex-values .item6 {
+        flex-grow: 4;
+    }
+
+    .flex-values .item5 {
+        flex-grow: 8;
+    }
+
+    /* ===============================
+    10) FLEX (SHORTHAND)
+      flex: grow shrink basis
+    ================================ */
+    .flex-shorthand {
+      display: flex;
+      align-items: baseline;
+      border: 2px dashed black;
+      padding: 10px;
+    }
+
+    .flex-shorthand .item1 {
+        flex-basis: 100px;
+    }
+
+    .flex-shorthand .item2 {
+        flex-basis: 10px;
+    }
+
+    .flex-shorthand .item3 {
+        flex-basis: 300px;
+    }
+    
+    /* ===============================
+    11) JUSTIFY-CONTENT + GAP
+    =============================== */
+    .gapli {
+        display: flex;
+        gap: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Flexbox Özellik Bazlı Çalışma</h1>
+  <h3>1. flex-direction</h3>
+   <!-- row | column | row-reverse | column-reverse kullanın -->
+  <div class="container direction">
+    <div class="item">DANKE</div>
+    <div class="item">TSCHÜSS</div>
+    <div class="item">ZUCKER</div>
+  </div>
+
+  <h3>2. flex-wrap</h3>
+  <p>Container küçüldüğünde öğelerin nasıl sığdığını gözlemleyin:</p>
+  <div class="container wrap">
+    <div class="item">Kutu 1</div>
+    <div class="item">Kutu 2</div>
+    <div class="item">Kutu 3</div>
+    <div class="item">Kutu 4</div>
+    <div class="item">Kutu 5</div>
+    <div class="item">Kutu 6</div>
+  </div>
+
+  <h3>3. justify-content</h3>
+   <!-- flex-start | center | flex-end | space-between | space-around | space-evenly kullanın -->
+  <div class="container justify-content">
+    <div class="item">A</div>
+    <div class="item">B</div>
+    <div class="item">C</div>
+  </div>
+
+  <h3>4. align-items</h3>
+  <!-- flex-start | center | flex-end | baseline | stretch kullanın -->
+  <div class="container align-items">
+    <div class="item" >X</div>
+    <div class="item" style="height:70px">Y</div>
+    <div class="item" style="height:100px">Z</div>
+  </div>
+
+  <h3>5. align-content</h3>
+  <!-- flex-start | center | flex-end | space-between | space-around | stretch kullanın -->
+  <div class="container align-content">
+    <div class="item">M1</div>
+    <div class="item">M2</div>
+    <div class="item">M3</div>
+    <div class="item">M4</div>
+    <div class="item">M5</div>
+    <div class="item">M6</div>
+  </div>
+
+  <h3>6. align-self örneği</h3>
+  <!-- flex-start | center | flex-end | baseline | stretch kullanın -->
+  <div class="container align-self">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item ozel">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+  </div>
+
+  <h3>7. order</h3>
+  <div class="container order">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+  </div>
+  
+  <h3>8. flex-grow - flex-basis</h3>
+  <!-- flex-grow ve flex-basis değerlerini değiştirin -->
+  <div class="container flex-values">
+    <div class="item item1">A</div>
+    <div class="item item2">B</div>
+    <div class="item item3">C</div>
+  </div>
+
+  <h3>9. flex-shrink - flex-basis</h3>
+  <!-- flex-shrink ve flex-basis değerlerini değiştirin -->
+  <div class="container flex-values">
+    <div class="item item4">A</div>
+    <div class="item item5">B</div>
+    <div class="item item6">C</div>
+  </div>
+
+  <h3>10. flex (shorthand) kullanımı</h3>
+  <p>
+    flex özelliği; <strong>flex-grow, flex-shrink, flex-basis</strong>
+    değerlerinin kısaltılmış hâlidir.
+  </p>
+  <!-- flex: grow shrink basis -->
+  <div class="container flex-shorthand">
+    <div class="item item1">flex: 1</div>
+    <div class="item item2">flex: 2</div>
+    <div class="item item3">flex: 5</div>
+  </div>
+  
+  <p>11. justify-content + gap</p>
+  <!-- gap ile öğeler arası boşluk ekleyin -->
+   <div class="container gapli">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+</body>
+</html>

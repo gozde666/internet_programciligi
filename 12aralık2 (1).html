@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>CSS Position Çalışması</title>
+
+<style>
+  body {
+font-family: Arial, sans-serif;
+margin: 40px;
+line-height: 1.6;
+height: 2100px;
+}
+
+h1, h2 {
+margin-bottom: 10px;
+}
+
+.kutu {
+width: 300px;
+padding: 20px;
+background: #dcdcdc;
+border: 2px solid #333;
+margin-bottom: 40px;
+}
+
+.kapsayici {
+width: 100%;
+height: 200px;
+background: #f3f3f3;
+border: 2px dashed #666;
+margin-bottom: 40px;
+position: relative; /* Absolute örneği bunun içinde çalışacak */
+padding: 10px;
+}
+
+/* 1. STATIC – Varsayılan, extra bir özellik gerekmez */
+.static-test {
+}
+
+/* 2. RELATIVE – Normal konumunda kalır, görüntü kayar */
+.relative-test {
+position: relative;
+top: 30px;
+left: 20px;
+}
+
+/* 3. ABSOLUTE – En yakın relative kapsayıcıya göre konumlanır */
+.absolute-test {
+position: absolute;
+top: 80px;
+left: 25px;
+background-color: antiquewhite;
+}
+
+/* 4. FIXED – Ekrana sabitlenir */
+.fixed-test {
+position: fixed;
+right: 10px;
+bottom: 10px;
+background: rgb(red, rgb(0, 7, 0), rgb(199, 199, 211));
+padding: 20px;
+border: 3px solid rgb(red, rgb(0, 5, 0), rgb(218, 11, 11));
+}
+
+/* 5. STICKY – Sayfa kayarken belirli bir yerde yapışır */
+.sticky-test {
+position: sticky;
+top: 10px;
+padding: 20px;
+background: lightgoldenrodyellow;z-index: 100;
+border: 2px solid red;
+}
+
+/* 6. Z-INDEX – Üst üste kutuların hangisinin önde olduğunu belirler */
+.z1, .z2, .z3 {
+width: 120px;
+height: 120px;
+position: absolute;
+top: 30px;
+left: 20px;
+padding: 10px;
+color: white;
+font-weight: bold;
+}
+
+.z1 { background: rgb(85, 0, 255);z-index: 5; }
+.z2 { background: rgb(128, 102, 0); left: 80px;z-index: 10; }
+.z3 { background: rgb(0, 225, 255); left: 140px;z-index: 9; }
+
+/* 7. FLOAT */
+.float-box {
+width: 150px;
+height: 100px;
+background: rgb(199, 6, 6);
+float: right;
+padding: 10px;
+margin-right: 15px;
+border: 2px solid rgb(166, 179, 56);
+}
+
+/* Float’ı temizlemek için */
+
+.after-clear {
+background: #d4ffd4;
+padding: 10px;
+margin-top: 10px;
+}
+</style>
+</head>
+<body>
+
+  <h1>CSS Position Türleri</h1>
+
+  <h2>1. STATIC (Varsayılan Davranış)</h2>
+  <div class="kutu static-test">
+    Bu kutu STATIC konumlandırılmıştır. Sayfadaki normal akışına göre yerleşir.
+  </div>
+
+  <h2>2. RELATIVE</h2>
+  <div class="kutu relative-test">
+    Bu kutu RELATIVE konumlandırılmıştır. Normal yeri korunur ama görüntü olarak kayar.
+  </div>
+
+  <h2>3. ABSOLUTE</h2>
+  <div class="kapsayici">
+    Bu alan kapsayıcıdır (relative).  
+    Absolute kutusu bu kutunun içinde konumlanacaktır.
+    <div class="kutu absolute">
+      Bu kutu ABSOLUTE konumlandırılmıştır.
+    </div>
+  </div>
+
+  <h2>4. FIXED</h2>
+  <div class="kutu fixed-test">
+    Bu kutu FIXED konumlandırılmıştır. Sayfa kaydırılsa bile ekranın sağ alt köşesinde kalır.
+  </div>
+
+  <h2>5. STICKY</h2>
+  <div class="sticky-test">
+    Bu kutu STICKY konumlandırılmıştır. Sayfa kaydırınca üst kısma yapışacaktır.
+  </div>
+
+  <h2>6. Z-INDEX</h2>
+  <div class="kapsayici">
+    <div class="z1">z-index:1</div>
+    <div class="z2">z-index:3</div>
+    <div class="z3">z-index:2</div>
+  </div>
+  <p>Yeşil kutu en önde çünkü z-index değeri en yüksek.</p>
+
+  <h2>7. FLOAT ve CLEAR</h2>
+  <div class="float-box">Bu kutu sağa yaslandı (float: right)</div>
+
+  <p>
+    Bu yazı float'lanan kutunun yanından akar.  
+    Çünkü kutu akışın soluna yaslandı, yazı da sağından devam eder.
+  </p>
+
+  <div class="clear"></div>
+
+  <p class="after-clear">
+    Bu yazı artık float etkisinden kurtulmuş durumda (clear: both).  
+    Yani floated kutunun altından başlar.
+  </p>
+</body>
+</html>

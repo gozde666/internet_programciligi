@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Etiketleri ve Flexbox Örneği</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        header, nav, footer {
+            background: #2c3e73;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* Ana alan */
+        main {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Sol içerik */
+        .content {
+            flex: 3;
+            border: 3px solid #9fbfb3;
+            padding: 10px;
+            background: #ffffff;
+        }
+
+            .content section {
+                background: #dfeee8;
+                padding: 10px;
+                margin-bottom: 10px;
+                text-align: center;
+                font-weight: bold;
+            }
+
+            .content article {
+                background: #f3d6a2;
+                padding: 15px;
+                margin-bottom: 10px;
+                text-align: center;
+                font-weight: bold;
+            }
+
+        /* Sağ sidebar */
+        aside {
+            flex: 1;
+            background: #c7b3d6;
+            padding: 10px;
+        }
+
+            aside section {
+                background: #e8f0f6;
+                padding: 15px;
+                margin-bottom: 10px;
+                text-align: center;
+                font-weight: bold;
+            }
+
+        footer {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>HEADER</header>
+
+    <nav>NAV</nav>
+
+    <main>
+        <div class="content">
+            <section>SECTION</section>
+            <article>ARTICLE</article>
+            <article>ARTICLE</article>
+            <section>SECTION</section>
+        </div>
+
+        <aside>
+            <section>SECTION</section>
+            <section>SECTION</section>
+        </aside>
+    </main>
+
+    <footer>FOOTER</footer>
+
+</body>
+</html>
